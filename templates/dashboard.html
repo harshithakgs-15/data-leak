@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='disable.js') }}"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Welcome, {{ user.email }}</h1>
+        <p>Role: {{ user.role }}</p>
+
+        <h2>Course Materials</h2>
+
+        <ul>
+            <li><a href="{{ url_for('view_pdf', filename='sample1.pdf') }}">View Sample PDF</a></li>
+            <!-- Add more files as needed -->
+        </ul>
+
+        <h2>Course Videos</h2>
+        <video controls width="500">
+            <source src="{{ url_for('static', filename='../content/videos/sample.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <br><br>
+        <a href="/logout">Logout</a>
+    </div>
+</body>
+</html>
