@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request, session
 from extensions import db
 from models import User
 from utils import watermark_pdf, log_access
+import os
 
 app = Flask(__name__)
 app.secret_key = 'your-secret-key'
